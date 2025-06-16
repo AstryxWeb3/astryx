@@ -1,6 +1,6 @@
 # Astryx
 
-Astryx is an open-source infrastructure hub designed for decentralized AI agents. It enables developers to easily create, deploy, and manage intelligent, reactive, and autonomous dApps (AI-driven applications) with high efficiency and minimal costs. Powered by the Solana blockchain, Astryx aims to redefine how AI interacts with decentralized systems.
+*Astryx is the open-source infrastructure hub for decentralized AI agents—empowering developers to build, deploy, and manage intelligent, autonomous dApps with transparency, security, and trust at its core.*
 
 [![Version](https://img.shields.io/badge/version-1.0-blue)](https://astryx.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -10,46 +10,61 @@ Astryx is an open-source infrastructure hub designed for decentralized AI agents
 
 ## 🌐 Vision
 
-Astryx is built around the idea that AI agents are the natural evolution of smart contracts. These agents are capable of adapting to changing conditions, enabling a new class of applications that are intelligent, autonomous, and responsive.
+Astryx is founded on the belief that AI agents are the next evolution of smart contracts—trustworthy, transparent, and accountable. In our ecosystem, every agent’s logic is verifiable, all actions are auditable, and users stay in control.
 
-> “AI agents are not just reactive, they’re proactive. They make decisions, adapt to data, and self-optimize.”
+> “AI agents are not just reactive, they’re proactive. They make decisions, adapt to data, and self-optimize—always with the user’s interests and transparency in mind.”
+
+---
+
+## 🤝 Trust & Transparency
+
+At Astryx, trust is not a marketing slogan—it’s a technical guarantee:
+
+- **Open Source, Always:** Every line of Astryx’s code is publicly auditable, MIT-licensed, and open for review.
+- **Verifiable Agent Code:** Agent logic is stored on tamper-proof networks (IPFS/Arweave), ensuring code can’t be swapped or obfuscated after deployment.
+- **Immutable Audit Trail:** All agent actions and decisions are recorded on-chain for independent verification and future-proof accountability.
+- **User Consent:** Agents only execute actions and access data with explicit user permission—no silent data harvesting or hidden behaviors.
+- **Cryptographic Security:** All agent interactions are signed and verified using industry-standard cryptography and on-chain signatures.
+- **Privacy by Design:** Sensitive data is never shared or logged without clear user opt-in; support for end-to-end encrypted agent communication is in the roadmap.
+- **Zero-Knowledge Proofs (coming soon):** Agents will be able to prove compliance and correctness without exposing sensitive data.
+- **Transparent Governance:** Roadmaps, proposals, and major decisions are public and community-driven, with plans for DAO-based governance.
 
 ---
 
 ## ⚙️ Key Features
 
-* **AI Agent Framework**: Build, register, and manage AI agents using a simple API.
-* **On-Chain Interoperability**: Seamlessly integrate AI agents with smart contracts and Solana-based dApps.
-* **OpenAI Assistant Integration**: Easily connect to ChatGPT-based agents.
-* **Decentralized Execution**: Agents run in a verifiable and trustless way.
-* **Real-Time Adaptability**: Agents learn and update based on external events.
-* **Developer SDKs**: Available in TypeScript, Python, and Rust.
-* **Agent Templates**: Pre-configured starter templates for popular use cases.
-* **Agent Marketplace**: Discover, test, and fork public AI agents.
-* **Webhooks & Plugins**: Connect agents to off-chain apps.
-* **Built-in Monitoring**: Track agent behavior and usage logs.
+- **Unified AI Agent Framework:** Build, register, and manage AI agents with a simple, auditable API.
+- **On-Chain Interoperability:** Integrate with Solana and other chains for trustless, decentralized execution.
+- **OpenAI & Custom Model Support:** Use ChatGPT or your own LLMs.
+- **Real-Time, Adaptive Agents:** Agents learn, adapt, and improve from live data—while logs and updates remain verifiable.
+- **Multi-Language SDKs:** Available in TypeScript, Python, and Rust.
+- **Agent Marketplace:** Browse, test, and fork public agents, all with clear provenance and code history.
+- **Webhooks & Plugins:** Securely connect to off-chain apps—agents never act outside user-defined permissions.
+- **Comprehensive Monitoring:** Track agent actions, logs, and performance in a transparent dashboard.
+- **Agent Studio (coming soon):** Visual, low-code builder with secure simulation environments.
+- **Security & Compliance:** Best-practice authentication, rate limiting, and schema validation everywhere.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ```bash
-# Clone the repo
-$ git clone https://github.com/astryx-org/astryx.git
-$ cd astryx
+# Clone the repository
+git clone https://github.com/astryx-org/astryx.git
+cd astryx
 
 # Install dependencies
-$ npm install
+npm install
 
-# Start the dev server
-$ npm run dev
+# Start the development server
+npm run dev
 ```
 
-For more detailed developer onboarding, visit: [docs.astryx.org](https://docs.astryx.org)
+Full onboarding & advanced setup: [docs.astryx.org](https://docs.astryx.org)
 
 ---
 
-## 🧠 AI Agent Example
+## 🧠 Example: Creating a Trustworthy AI Agent
 
 ```ts
 // src/agents/price_monitor.ts
@@ -61,6 +76,7 @@ createAgent({
   trigger: 'priceDrop',
   threshold: 10,
   action: async (context) => {
+    // All actions are logged and user-approved before alerts are sent
     await context.sendAlert(`Price dropped by 10%! Current: ${context.price}`);
   }
 });
@@ -70,9 +86,9 @@ createAgent({
 
 ## 📡 API Reference
 
-All requests are made to: `https://api.astryx.org`
+All API requests are made to: `https://api.astryx.org`
 
-### Create Agent
+### Create an Agent
 
 ```http
 POST /v1/agents
@@ -87,7 +103,7 @@ Content-Type: application/json
 }
 ```
 
-### Agent Chat
+### Chat with an Agent
 
 ```http
 POST /v1/chat
@@ -106,57 +122,61 @@ GET /v1/agents/{agent_id}/logs
 Authorization: Bearer YOUR_API_KEY
 ```
 
-### Delete Agent
+### Delete an Agent
 
 ```http
 DELETE /v1/agents/{agent_id}
 Authorization: Bearer YOUR_API_KEY
 ```
 
+For the full API spec, see [docs.astryx.org/api](https://docs.astryx.org/api).
+
 ---
 
 ## 🧰 Developer Toolkit
 
-* **SDKs**: `astryx-sdk` (JS/TS), `astryx-py`, `astryx-rs`
-* **CLI**: `npx astryx init`
-* **Templates**: `astryx/templates`
-* **Agent Studio UI**: (Coming soon)
-* **Simulation Tools**: Run dry-runs of agents before deployment.
-* **Type Definitions**: Built-in schema validation for all agent inputs/outputs.
+- **SDKs:** `astryx-sdk` (JS/TS), `astryx-py` (Python), `astryx-rs` (Rust)
+- **CLI:** `npx astryx init` — Bootstrap projects in seconds
+- **Templates:** Auditable agent blueprints
+- **Agent Studio UI:** Visual builder (coming soon)
+- **Simulation Tools:** Test agents with dry-runs in an auditable sandbox
+- **Type Definitions:** Schema validation for all agent inputs/outputs
 
 ---
 
 ## 🌍 Why Solana?
 
-* **High Throughput**: Supports thousands of transactions per second.
-* **Low Fees**: Optimized for microtransactions.
-* **Scalability**: Suited for agent-based apps that require frequent updates.
-* **Community**: Thriving ecosystem of devs and users.
-* **Compression Support**: Reduced data costs for agents using compressed state.
+- **High Throughput:** Handles thousands of transactions per second for scalable agent operations.
+- **Low Fees:** Microtransactions and frequent updates are affordable and accessible.
+- **Immutable State:** On-chain data and signatures provide tamper-proof history.
+- **Vibrant Ecosystem:** Large community, robust tools, and transparent open-source standards.
+- **Compression:** Efficient, low-cost agent storage with state compression.
 
 ---
 
-## 🔐 Security
+## 🔐 Security & Trust
 
-* Agent code is verified and stored via IPFS or Arweave.
-* On-chain signatures validate external requests.
-* Optional zero-knowledge proof support (coming soon).
-* Access tokens follow best practices with OAuth2 and JWT.
-* Built-in rate limiting and abuse prevention.
+- **Verifiable Storage:** Agent code and configs stored on IPFS/Arweave—immutable and always auditable.
+- **On-chain Signatures:** All external agent actions must be cryptographically validated.
+- **ZK Proofs:** Zero-knowledge agent execution (coming soon) for privacy and compliance.
+- **OAuth2/JWT:** Industry-standard authentication and authorization.
+- **User-Centric Permissions:** Agents cannot access or act on data without explicit user approval.
+- **Rate Limiting:** Protects against abuse while logs remain publicly auditable.
+- **Responsible Disclosure:** Security vulnerabilities can be reported via [security@astryx.org](mailto:security@astryx.org).
 
 ---
 
-## 📂 Folder Structure
+## 📂 Project Structure
 
 ```
 astryx/
 ├── src/
-│   ├── agents/           # AI agents you define
-│   ├── lib/              # Helper utilities
-│   └── ui/               # React components
+│   ├── agents/           # Define your AI agents here (public & auditable)
+│   ├── lib/              # Utility functions and helpers
+│   └── ui/               # React components & frontend
 ├── public/
-├── docs/                 # GitBook documentation
-├── examples/             # Sample agents
+├── docs/                 # GitBook-powered documentation
+├── examples/             # Example agents & scripts (all MIT-licensed)
 ├── README.md
 ├── package.json
 └── tsconfig.json
@@ -164,52 +184,59 @@ astryx/
 
 ---
 
-## 🧪 Tests
+## 🧪 Running Tests
 
 ```bash
-# Run full test suite
+# Run the full test suite
 npm run test
 
-# Linting
+# Lint and check code style
 npm run lint
 ```
+
+All tests are open and reproducible—contributions must include passing test coverage.
 
 ---
 
 ## 🧭 Roadmap
 
-* [x] Initial SDKs (TS)
-* [x] Basic agent templates
-* [ ] Agent Studio (visual interface)
-* [ ] ZK-attested agent execution
-* [ ] Custom model plugin support
-* [ ] DAO-based registry governance
-* [ ] Gasless execution via relayers
+- [x] Initial SDKs (TypeScript)
+- [x] Agent templates
+- [ ] Agent Studio (visual builder)
+- [ ] ZK-attested agent execution
+- [ ] Custom model/plugin support
+- [ ] DAO-based registry governance (community-led)
+- [ ] Gasless execution via relayers
 
 ---
 
-## 💼 Contribute
+## 💼 Contributing
 
-We welcome contributors! Please:
+We ❤️ contributors! To help us build the most trusted AI agent platform:
 
-* Fork the repo and create a feature branch
-* Open a PR with clear commit history
-* Add tests for your features
+1. Fork the repo and create a feature branch
+2. Add clear, descriptive commits
+3. Ensure tests cover new features or bugfixes
+4. Open a PR (all PRs are reviewed for security and transparency)
 
-For major features, submit a proposal to `/proposals`
+For major features, please submit a proposal in `/proposals`. All proposals, discussions, and votes are public.
 
 ---
 
 ## 📄 License
 
-MIT License — Copyright (c) 2025 Astryx.org
+MIT License — © 2025 Astryx.org  
+Open source, forever. Use, audit, and contribute freely.
 
 ---
 
-## 🔗 Resources
+## 🔗 Links & Resources
 
-* Docs: [https://docs.astryx.org](https://docs.astryx.org)
-* API: [https://api.astryx.org](https://api.astryx.org)
-* Twitter: [@astryx\_ai](https://twitter.com/astryx_ai)
-* Website: [https://astryx.org](https://astryx.org)
-* Discord: (Coming Soon)
+- **Docs:** [https://docs.astryx.org](https://docs.astryx.org)
+- **API:** [https://api.astryx.org](https://api.astryx.org)
+- **Twitter:** [https://x.com/astryxweb3](https://x.com/astryxweb3)
+- **Website:** [https://astryx.org](https://astryx.org)
+- **Discord:** (Coming Soon)
+- **Security Contact:** [security@astryx.org](mailto:security@astryx.org)
+
+---
